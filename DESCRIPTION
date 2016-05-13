@@ -1,0 +1,14 @@
+Package: logiclescale
+Type: Package
+Title: Logicle scale for ggplot2
+Version: 0.1.0
+Authors@R: person("Tim", "Smith", email = "logicle@tds.xyz", role = c("aut", "cre"))
+Description: Logicle scale for ggplot2
+License: MIT
+LazyData: TRUE
+Imports:
+    scales,
+    flowCore
+Suggests:
+    ggplot2
+RoxygenNote: 5.0.1
