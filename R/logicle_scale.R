@@ -11,8 +11,9 @@ logicle_trans = function(w=0.5, t=262144, m=4.5) {
   }
   breaks = function(x) {
     lim = 10**(1+w)
-    unique(c(scales::pretty_breaks(n=3, min.n=3)(c(x[1], lim)),
-             scales::log_breaks(10)(c(lim, x[2]))))
+    linear = scales::pretty_breaks(n=3, min.n=3)(c(x[1], lim))
+    logs = scales::log_breaks(10)(c(lim, x[2]))
+    unique(c(linear[linear <= lim], logs[logs > lim]))
   }
   scales::trans_new("logicle", transform, inverse, breaks)
 }
